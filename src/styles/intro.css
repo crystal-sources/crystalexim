@@ -1,0 +1,230 @@
+/* Base Styles */
+.i-title {
+  height: 100%;
+  overflow: hidden;
+}
+
+.i-title-wrapper {
+  height: 100%;
+}
+
+.i-title-item {
+  font-size: 30px;
+  font-weight: bold;
+  color: #59b256;
+  display: flex;
+  align-items: center;
+  height: 20%;
+}
+
+.i-title-wrapper {
+  animation: move 10s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+  25% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  75% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.swing-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-origin: top center;
+  animation: swing 7s infinite ease-in-out;
+}
+
+.intro-container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 50vw solid transparent;
+  border-right: 50vw solid transparent;
+  border-bottom: 100px solid RGBA(55, 57, 56, 0.95);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2f312f;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #15cc96;
+  border-radius: 20px;
+  border: 1px solid #2f312f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #15cc96;
+}
+
+/* Support for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #15cc96 #ffffff00;
+}
+
+/* Style the horizontal scrollbar */
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+@keyframes moveShip {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(35%);
+  }
+}
+
+@media (max-width: 600px) {
+  @keyframes moveShip {
+    0% {
+      transform: translateX(-10%);
+    }
+    100% {
+      transform: translateX(10%);
+    }
+  }
+}
+
+.animate-ship {
+  animation: moveShip 10s infinite linear alternate;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .i-title-item {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .i-title-item {
+    font-size: 20px;
+  }
+}
+
+/* Adjustments for Small Screens */
+@media (max-width: 600px) {
+  .i-title {
+    height: auto;
+  }
+
+  .i-title-wrapper {
+    height: auto;
+    animation: moveSmallScreen 10s ease-in-out infinite alternate;
+  }
+
+  @keyframes moveSmallScreen {
+    25% {
+      transform: translateY(-20%);
+    }
+    50% {
+      transform: translateY(-40%);
+    }
+    75% {
+      transform: translateY(-60%);
+    }
+    100% {
+      transform: translateY(-80%);
+    }
+  }
+
+  .intro-container::after {
+    border-bottom: 80px solid RGBA(55, 57, 56, 0.95);
+  }
+}
+
+.triangle-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 100vw solid transparent;
+  border-top: 4rem solid #4b5563; /* Adjust the color to match bg-gren */
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.gradient-container {
+  background: linear-gradient(135deg, #15cc96, #04664b);
+}
+
+.fixed-social {
+  position: fixed;
+  bottom: 40px; /* Adjust the distance from the bottom */
+  right: 40px; /* Adjust the distance from the right */
+  width: 50px; /* Adjust the size */
+  height: 50px; /* Adjust the size */
+  z-index: 1000; /* Ensure it appears above other elements */
+  cursor: pointer;
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 80px; /* Adjust the distance above the main icon */
+  right: 0;
+  display: none;
+  grid-template-columns: repeat(2, 50px); /* Adjust size */
+  grid-template-rows: repeat(2, 50px); /* Adjust size */
+  gap: 10px;
+  background: #ffffff85;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-social:hover .social-icons,
+.social-icons:hover {
+  display: grid;
+}
+
+.social-icons img {
+  width: 40px; /* Adjust the size */
+  height: 40px; /* Adjust the size */
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}

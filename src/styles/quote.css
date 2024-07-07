@@ -1,0 +1,35 @@
+.quote-container {
+  background: linear-gradient(135deg, #15cc95, #04664a);
+  padding: 40px;
+  /* border-radius: 10px; */
+  text-align: center;
+  color: black;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Example font */
+}
+
+.quote-text {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.quote-text span {
+  font-weight: bold;
+}
+
+.contact-button {
+  padding: 12px 24px;
+  background-color: #caa860d0;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  /* border-radius: 25px; */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #0c7a5a;
+  color: white;
+}
