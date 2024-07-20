@@ -3,7 +3,6 @@ import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
 import {
   AiFillFacebook,
-  AiFillTwitterCircle,
   AiFillInstagram,
   AiOutlineWhatsApp,
   AiFillLinkedin,
@@ -13,6 +12,7 @@ import arrow from "../../assets/right-up.png";
 import countryCodes from "../../data/CountryCode.json";
 import { sendFormData } from "../../api/api";
 import tele from "../../assets/tele.svg";
+import x from "../../assets/x.svg";
 
 const Footer = () => {
   const [countryCode, setCountryCode] = useState("+91");
@@ -23,8 +23,8 @@ const Footer = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [submitError, setSubmitError] = useState(null);
+  // const [submitSuccess, setSubmitSuccess] = useState(false);
+  // const [submitError, setSubmitError] = useState(null);
 
   const handleCountryCodeChange = (event) => {
     setCountryCode(event.target.value);
@@ -53,11 +53,11 @@ const Footer = () => {
     try {
       const result = await sendFormData(payload);
       console.log("Success:", result);
-      setSubmitSuccess(true);
+      // setSubmitSuccess(true);
       setFormData({ name: "", email: "", contact_no: "", message: "" });
       toast.success("Inquiry sent successfully!");
     } catch (error) {
-      setSubmitError(error.message);
+      // setSubmitError(error.message);
       toast.error(`Error: ${error.message}`);
     } finally {
       setIsSubmitting(false);
@@ -68,7 +68,7 @@ const Footer = () => {
     <>
       <Toaster />
       <footer
-        className="bg-white text-black py-8 px-4 sm:px-16"
+        className="bg-white text-black py-8 px-4 sm:px-16 w-screen"
         id="contact-us"
       >
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center md:space-x-16">
@@ -121,7 +121,14 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-2xl text-gray-400 hover:text-gren transition duration-300"
                 >
-                  <AiFillTwitterCircle />
+                  {/* <AiFillTwitterCircle /> */}
+                  <img
+                    src={x}
+                    alt="Twitter"
+                    height={22}
+                    width={22}
+                    // className="opacity-50"
+                  />
                 </a>
                 <a
                   href="https://wa.me/919662215115"
@@ -226,14 +233,14 @@ const Footer = () => {
                       )}
                     </div>
                   </button>
-                  {submitSuccess && (
+                  {/* {submitSuccess && (
                     <p className="text-green-500 mt-4">
                       Inquiry sent successfully!
                     </p>
                   )}
                   {submitError && (
                     <p className="text-red-500 mt-4">Error: {submitError}</p>
-                  )}
+                  )} */}
                 </div>
               </form>
             </div>

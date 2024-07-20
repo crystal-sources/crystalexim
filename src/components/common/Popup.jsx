@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import crystalEximLogo from "../../assets/crytal_header.svg";
 import welcomeVector from "../../assets/wcVector.svg";
 import "../../App.css";
@@ -6,18 +6,42 @@ import "../../styles/intro.css";
 
 // eslint-disable-next-line react/prop-types
 const WelcomePopup = ({ onClose }) => {
+  const [visible, setVisible] = useState(false);
+  const [closing, setClosing] = useState(false);
+
   useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, 2000);
+
     document.body.style.overflow = "hidden";
     return () => {
+      clearTimeout(timer);
       document.body.style.overflow = "auto";
     };
   }, []);
 
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setVisible(false);
+      onClose();
+    }, 500);
+  };
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4 sm:p-8">
-      <div className="relative bg-white p-4 sm:p-8 rounded-lg max-w-md mx-auto text-center shadow-lg">
+    <div
+      className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4 sm:p-8 transition-opacity duration-500 ${
+        visible && !closing ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <div
+        className={`relative bg-white p-4 sm:p-8 rounded-lg max-w-md mx-auto text-center shadow-lg transition-transform duration-500 ${
+          visible && !closing ? "scale-100" : "scale-90"
+        }`}
+      >
         <button
-          onClick={onClose}
+          onClick={handleClose}
           className="absolute top-1 md:top-0 right-2 md:right-0 -mt-4 -mr-4 p-2 bg-gren rounded-lg shadow-xl hover:scale-105 transition-transform duration-500 "
           style={{
             transform: "perspective(600px) rotateX(0deg) rotateY(0deg)",
@@ -59,9 +83,8 @@ const WelcomePopup = ({ onClose }) => {
           Welcome to Crystal EXIM: Your Gateway to Global Trade!
         </h1>
         <p className="text-base inter-crystal-regular mb-4">
-          We're thrilled to introduce Phase One of our site. Stay tuned as we
-          launch our full site in a few months. In the meantime, feel free to
-          explore and communicate with us through this site.
+          Welcome to Phase One of our site! The full launch is just around the
+          corner. Dive in now and connect with us!
         </p>
       </div>
     </div>

@@ -1,4 +1,6 @@
-import exim from "../assets/CRYSTALEXIM.jpg";
+// import exim from "../assets/CRYSTALEXIM.jpg";
+// import hand from "../assets/hand.svg";
+import trade from "../assets/trade.gif";
 import socialIcon from "../assets/social.png"; // Social icon that expands on hover
 import whatsappIcon from "../assets/whatsapp.png";
 import facebookIcon from "../assets/facebook.png";
@@ -59,14 +61,14 @@ const Intro = () => {
     <>
       {showPopup && <WelcomePopup onClose={handleClosePopup} />}
 
-      <div className="relative flex flex-col md:flex-row h-screen w-screen bg-white mt-24 md:mt-0">
+      <div className="relative flex flex-col md:flex-row h-screen w-screen bg-white mt-24 md:mt-0 overflow-hidden">
         {/* Left Section */}
         <div className="w-full md:w-3/5 flex flex-col items-center md:items-start justify-center text-neutral-600 px-6 md:px-12">
           <section className="w-full">
             {/* Small Tagline: */}
-            <div className="ibm-plex-mono-regular block text-left mb-8 px-4 md:px-0">
+            {/* <div className="ibm-plex-mono-regular block text-left mb-8 px-4 md:px-0">
               Empowering Global Trade with Precision and Excellence
-            </div>
+            </div> */}
 
             {/* Main Title: */}
             <div className="text-3xl md:text-5xl mt-4 md:mt-4 text-espresso font-semibold block  text-left m-4 md:m-0 telegraf-regular">
@@ -115,11 +117,16 @@ const Intro = () => {
         </div>
 
         {/* Right Section */}
-        <div className="md:flex w-full md:w-2/5 items-center justify-center p-4 md:p-0">
-          <img
-            src={exim}
+        <div className="md:flex w-full md:w-2/5 items-center justify-center p-4 md:p-0 overf">
+          {/* <img
+            src={hand}
             className="h-auto w-auto object-cover md:object-contain"
             alt="Crystal Impex"
+          /> */}
+          <img
+            src={trade}
+            alt="Animated GIF"
+            className="h-auto w-auto object-cover md:object-contain"
           />
         </div>
 

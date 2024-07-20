@@ -1,5 +1,5 @@
 const SwiftFlowSection = () => (
-  <div className="bg-white text-black font-sans text-center py-12 px-6">
+  <div className="bg-white text-black font-sans text-center py-12 px-6 w-screen">
     <div className="flex lg:flex-row flex-col  items-center justify-between w-full px-6 md:px-12">
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <h1 className="text-3xl md:text-4xl text-espresso telegraf-regular">

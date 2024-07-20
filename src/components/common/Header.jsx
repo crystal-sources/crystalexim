@@ -1,12 +1,22 @@
 import arrow from "../../assets/right-up.png";
 import crystalExim from "../../assets/header.svg";
+import crystalHeader from "../../assets/crytal_header.svg";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 w-full flex items-center h-16 z-50 bg-white bg-opacity-85 backdrop-blur-md px-4 sm:px-8 md:px-16 shadow-xl">
+    <header className="fixed top-0 left-0 w-screen flex items-center h-16 z-50 bg-white bg-opacity-85 backdrop-blur-md px-4 sm:px-8 md:px-16 shadow-xl ">
       {/* Left Section */}
       <div className="flex items-center h-full">
-        <img src={crystalExim} alt="crystalExim Header" className="h-12" />
+        <img
+          src={crystalExim}
+          alt="crystalExim Header"
+          className="h-12  sm:hidden"
+        />
+        <img
+          src={crystalHeader}
+          alt="crystalExim Header"
+          className="h-12 hidden sm:block"
+        />
       </div>
 
       {/* Middle Section */}
