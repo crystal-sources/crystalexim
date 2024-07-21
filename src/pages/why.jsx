@@ -1,5 +1,5 @@
 const SwiftFlowSection = () => (
-  <div className="bg-white text-black font-sans text-center py-12 px-6">
+  <div className="bg-white text-black font-sans text-center py-12 px-6 w-screen">
     <div className="flex lg:flex-row flex-col  items-center justify-between w-full px-6 md:px-12">
       <div className="flex-shrink-0 mb-6 md:mb-0">
         <h1 className="text-3xl md:text-4xl text-espresso telegraf-regular">
@@ -27,7 +27,7 @@ const SwiftFlowSection = () => (
             shipment.
           </p>
         </div>
-        <div className="bg-grenbox bg-opacity-10  p-6 rounded-lg text-left">
+        <div className="bg-grenbox bg-opacity-10  p-6 rounded-2xl text-left">
           <h2 className="text-xl md:text-2xl mb-4 text-black inter-crystal-semibold">
             Always Here, Always yours
           </h2>
@@ -37,7 +37,7 @@ const SwiftFlowSection = () => (
             ensuring personalized service and smooth operations.
           </p>
         </div>
-        <div className="bg-grenbox bg-opacity-10   p-6 rounded-lg text-left">
+        <div className="bg-grenbox bg-opacity-10   p-6 rounded-2xl text-left">
           <h2 className="text-xl md:text-2xl mb-4 text-black inter-crystal-semibold">
             Empowering Global Trade
           </h2>
@@ -48,7 +48,7 @@ const SwiftFlowSection = () => (
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-grenbox bg-opacity-10  p-6 rounded-lg text-left">
+        <div className="bg-grenbox bg-opacity-10  p-6 rounded-2xl text-left">
           <h2 className="text-xl md:text-2xl mb-4 text-black inter-crystal-semibold">
             Customer-Centric Support
           </h2>
@@ -58,7 +58,7 @@ const SwiftFlowSection = () => (
             deliver personalized service and responsive solutions.
           </p>
         </div>
-        <div className="bg-grenbox bg-opacity-10  p-6 rounded-lg text-left">
+        <div className="bg-grenbox bg-opacity-10  p-6 rounded-2xl text-left">
           <h2 className="text-xl md:text-2xl mb-4 text-black inter-crystal-semibold">
             Reliability and Security
           </h2>

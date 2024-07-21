@@ -3,6 +3,15 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      keyframes: {
+        "pulse-scale": {
+          "0%": { transform: "scale(0)", opacity: "1" },
+          "100%": { transform: "scale(1)", opacity: "0" },
+        },
+      },
+      animation: {
+        "pulse-scale": "pulse-scale 2s linear infinite",
+      },
       colors: {
         golden: "#CAA960",
         // brown: "#483C32",
